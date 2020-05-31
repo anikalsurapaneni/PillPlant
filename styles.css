@@ -1,0 +1,9 @@
+@import url('https://fontlibrary.org/face/glacial-indifference');
+body {
+	margin: 0;
+	background: #222;
+	font-family: 'GlacialIndifferenceRegular';
+   font-weight: normal;
+   font-style: normal;
+}
+

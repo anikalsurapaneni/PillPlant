@@ -1,0 +1,90 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<style>
+
+  body {
+    font-family: UbuntuMono-Regular;
+  }
+  </style>
+  
+<html style = "
+height: 1000px;
+margin: 0px
+
+background: #FFFFFF;">
+
+<head>
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css"/>
+  
+</head>
+
+<p>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+  {% endwith %}
+</p>
+{% if filename %}
+  <div>
+    <img src="{{ url_for('display_image', filename=filename) }}">
+  </div>
+{% endif %}
+<form method="scan" action="/" enctype="multipart/form-data" style="background-color: #18A1C1; font-family: Glacial Indifference; color: #fff; height: 300px; width: 300px">
+    <dl>
+    <p>
+      <input type="file" name="file" autocomplete="off" required >
+    </p>
+    </dl>
+    <p>
+    <input type="submit" value="Submit" style= "background-color:#18A1C1; font-family: Glacial Indifference; color: #fff; position: absolute; transition: .5s ease; top: 400px;">
+  </p>
+</form>
+
+<!--------------------------------Footer--------------------------->
+<div style = "position: absolute;
+width: 1440px;
+height: 200px;
+left: 0px;
+top: 1000px;
+background: #18A1C1;">
+
+<h7 style="position: absolute;
+width: 1200px;
+height: 28px;
+left: 150px;
+top: 50px;
+
+font-family: Glacial Indifference;
+font-style: normal;
+font-weight: 500;
+font-size: 26px;
+line-height: 48px;
+text-align: center;
+
+color: #FFFFFF;"> For more information, check out <a href="technovationchallenge.org">our app on the App Store</a>
+</h7>
+<h7 style="position: absolute;
+width: 1200px;
+height: 28px;
+left: 200px;
+top: 100px;
+
+font-family: Glacial Indifference;
+font-style: normal;
+font-weight: 500;
+font-size: 26px;
+line-height: 48px;
+text-align: center;
+
+color: #FFFFFF;"> © 2020 PillPlant. All Rights Reserved. 
+</h7>
+</div>
+</html>
+
+{% endblock %}
